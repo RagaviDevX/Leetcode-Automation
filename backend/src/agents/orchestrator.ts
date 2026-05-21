@@ -1,4 +1,4 @@
-import { ollamaService } from './ollama';
+import { ollamaService } from '../services/ollama';
 import {
   buildSolverPrompt,
   buildDebugPrompt,
@@ -6,8 +6,8 @@ import {
   buildReflectorPrompt,
   extractCodeFromResponse,
   parseReflectorResponse,
-} from './prompts';
-import { wsBroadcast } from './websocket';
+} from '../services/prompts';
+import { wsBroadcast } from '../services/websocket';
 import type {
   SolveRequest,
   SolveResult,
