@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -26,11 +26,11 @@ const LANG_OPTIONS = [
 ];
 
 const MODEL_OPTIONS = [
-  { value: 'auto', label: '🤖 Auto (Best Available)' },
-  { value: 'deepseek-coder:6.7b', label: '🔵 DeepSeek Coder 6.7B' },
-  { value: 'codellama:7b', label: '🟢 CodeLlama 7B' },
-  { value: 'qwen2.5-coder:7b', label: '🟡 Qwen2.5 Coder 7B' },
-  { value: 'phi3:mini', label: '🔴 Phi-3 Mini' },
+  { value: 'auto', label: 'ðŸ¤– Auto (Best Available)' },
+  { value: 'deepseek-coder:6.7b', label: 'ðŸ”µ DeepSeek Coder 6.7B' },
+  { value: 'codellama:7b', label: 'ðŸŸ¢ CodeLlama 7B' },
+  { value: 'qwen2.5-coder:7b', label: 'ðŸŸ¡ Qwen2.5 Coder 7B' },
+  { value: 'phi3:mini', label: 'ðŸ”´ Phi-3 Mini' },
 ];
 
 const EXAMPLE_PROBLEM = {
@@ -153,7 +153,7 @@ export function SolverWidget({ onSolved }: SolverWidgetProps) {
         });
         if (data.agentLogs) setAgentLogs(data.agentLogs);
         setPhase('success');
-        toast.success(`✅ Solution generated in ${((data.timeTakenMs || 0) / 1000).toFixed(1)}s`);
+        toast.success(`âœ… Solution generated in ${((data.timeTakenMs || 0) / 1000).toFixed(1)}s`);
         onSolved?.();
       } else {
         setPhase('error');
@@ -317,7 +317,7 @@ export function SolverWidget({ onSolved }: SolverWidgetProps) {
                   transition={{ repeat: Infinity, duration: 0.8 }}
                   className="text-primary"
                 >
-                  ▊
+                  â–Š
                 </motion.span>
               </div>
             )}
