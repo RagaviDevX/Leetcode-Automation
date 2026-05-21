@@ -122,7 +122,7 @@ export function SolverWidget({ onSolved }: SolverWidgetProps) {
         id: title.toLowerCase().replace(/\s+/g, '-'),
         title,
         slug: title.toLowerCase().replace(/\s+/g, '-'),
-        difficulty: 'Medium',
+        difficulty: 'Medium' as const,
         url: '',
         description: problem,
         constraints: [],
