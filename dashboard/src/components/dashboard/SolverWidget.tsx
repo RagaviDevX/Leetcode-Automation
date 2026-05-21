@@ -344,3 +344,4 @@ export function SolverWidget({ onSolved }: SolverWidgetProps) {
     </div>
   );
 }
+
