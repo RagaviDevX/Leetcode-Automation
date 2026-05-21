@@ -26,18 +26,18 @@ const LANG_OPTIONS = [
 ];
 
 const MODEL_OPTIONS = [
-  { value: 'auto', label: 'ðŸ¤– Auto (Best Available)' },
-  { value: 'deepseek-coder:6.7b', label: 'ðŸ”µ DeepSeek Coder 6.7B' },
-  { value: 'codellama:7b', label: 'ðŸŸ¢ CodeLlama 7B' },
-  { value: 'qwen2.5-coder:7b', label: 'ðŸŸ¡ Qwen2.5 Coder 7B' },
-  { value: 'phi3:mini', label: 'ðŸ”´ Phi-3 Mini' },
+  { value: 'auto', label: '🤖 Auto (Best Available)' },
+  { value: 'deepseek-coder:6.7b', label: '🔵 DeepSeek Coder 6.7B' },
+  { value: 'codellama:7b', label: '🟢 CodeLlama 7B' },
+  { value: 'qwen2.5-coder:7b', label: '🟡 Qwen2.5 Coder 7B' },
+  { value: 'phi3:mini', label: '🔴 Phi-3 Mini' },
 ];
 
 const EXAMPLE_PROBLEM = {
   id: 'two-sum',
   title: 'Two Sum',
   slug: 'two-sum',
-  difficulty: 'Easy' as const,
+  difficulty: 'Easy' as 'Easy' | 'Medium' | 'Hard',
   url: 'https://leetcode.com/problems/two-sum/',
   description: 'Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.',
   constraints: ['2 <= nums.length <= 10^4', '-10^9 <= nums[i] <= 10^9', '-10^9 <= target <= 10^9', 'Only one valid answer exists.'],
@@ -153,7 +153,7 @@ export function SolverWidget({ onSolved }: SolverWidgetProps) {
         });
         if (data.agentLogs) setAgentLogs(data.agentLogs);
         setPhase('success');
-        toast.success(`âœ… Solution generated in ${((data.timeTakenMs || 0) / 1000).toFixed(1)}s`);
+        toast.success(`✅ Solution generated in ${((data.timeTakenMs || 0) / 1000).toFixed(1)}s`);
         onSolved?.();
       } else {
         setPhase('error');
@@ -317,7 +317,7 @@ export function SolverWidget({ onSolved }: SolverWidgetProps) {
                   transition={{ repeat: Infinity, duration: 0.8 }}
                   className="text-primary"
                 >
-                  â–Š
+                  ▊
                 </motion.span>
               </div>
             )}
@@ -344,4 +344,3 @@ export function SolverWidget({ onSolved }: SolverWidgetProps) {
     </div>
   );
 }
-
